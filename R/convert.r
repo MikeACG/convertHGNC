@@ -11,6 +11,16 @@ id2id <- function(ids, queryCol, subjectCol) {
 }
 
 #' @export
+ensembl2symbol <- function(ids) {
+
+    queryCol <- match("ensembl_gene_id", names(hgnc))
+    subjectCol <- match("symbol", names(hgnc))
+
+    return(id2id(ids, queryCol, subjectCol))
+
+}
+
+#' @export
 ensembl2entrez <- function(ids) {
 
     queryCol <- match("ensembl_gene_id", names(hgnc))
